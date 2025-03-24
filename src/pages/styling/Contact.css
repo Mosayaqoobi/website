@@ -1,0 +1,10 @@
+.contact-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .email-link {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
