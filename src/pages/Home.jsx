@@ -4,7 +4,7 @@ import sponge from '../assets/sponge.webp';
 import github from '../assets/github.svg';
 import gmail from '../assets/gmail.png';
 import linkedin from '../assets/linked.png';
-import doc from '../assets/doc.png'
+import doc from '../assets/doc.png';
 
 //modal component that displays project details
 function Modal({ project, onClose }) {
@@ -12,7 +12,16 @@ function Modal({ project, onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
         <h2>{project.title}</h2>
-        <p>{project.description}</p>
+        <h3>overview</h3>
+        <p>{project.overview}</p>
+        <h3>link</h3>
+        <p>
+          <a href={project.link} target="_blank" rel="noopener noreferrer">
+            {project.link}
+          </a>
+        </p>
+        <h3>instructions</h3>
+        <p>{project.instructions}</p>
         <button onClick={onClose}>close</button>
       </div>
     </div>
@@ -23,10 +32,26 @@ function Modal({ project, onClose }) {
 function Home() {
   const [selectedProject, setSelectedProject] = useState(null);
   const [showCopyMessage, setShowCopyMessage] = useState(false);
-  //sample projects
+  //sample projects with new fields for overview, link, and instructions
   const projects = [
-    { id: 1, title: "project 1", description: "detailed explanation for project 1." },
-    { id: 2, title: "project 2", description: "detailed explanation for project 2." },
+    {
+      id: 1,
+      title: "social networking",
+      overview:
+        "social networking is an application built on the idea of socializing between others on the app. it allows you to post videos, share updates, and connect with friends.",
+      link: "https://example.com/social-networking",
+      instructions:
+        "to use the app, create an account, then log in to post content and interact with friends.",
+    },
+    {
+      id: 2,
+      title: "minion event app",
+      overview:
+        "minion event app is a mobile app that lets a user sign up for events within their area by scanning a qr code. it also allows organizers to create and manage events.",
+      link: "https://example.com/minion-event-app",
+      instructions:
+        "download the app, scan the qr code provided at event venues, and follow on-screen instructions to sign up.",
+    },
   ];
 
   //function to open modal
@@ -41,7 +66,8 @@ function Home() {
 
   //function to copy email to clipboard and show a custom toast
   const copyEmail = () => {
-    navigator.clipboard.writeText('your.email@example.com')
+    navigator.clipboard
+      .writeText("your.email@example.com")
       .then(() => {
         setShowCopyMessage(true);
         setTimeout(() => {
@@ -78,7 +104,7 @@ function Home() {
             <h1>contact me</h1>
             <div className="contact-boxes">
               <a
-                href="https://twitter.com/yourhandle"
+                href="https://github.com/Mosayaqoobi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-box"
@@ -86,7 +112,7 @@ function Home() {
                 <img src={github} alt="github" />
               </a>
               <a
-                href="https://linkedin.com/in/yourhandle"
+                href="https://www.linkedin.com/in/mosa-yaqoobi/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contact-box"
@@ -96,18 +122,11 @@ function Home() {
               <a onClick={copyEmail} className="contact-box">
                 <img src={gmail} alt="email" />
               </a>
-
-              <a
-                href="https://twitter.com/yourhandle"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="contact-box"
-              >
-                <img src={doc} alt="github" />
+              <a href="/resume.pdf" download className="contact-box">
+                <img src={doc} alt="resume" />
               </a>
             </div>
           </section>
-
         </div>
       </div>
 
@@ -121,7 +140,7 @@ function Home() {
               onClick={() => openModal(project)}
             >
               <h2>{project.title}</h2>
-              <p>{project.description.substring(0, 30)}...</p>
+              <p>{project.overview.substring(0, 30)}...</p>
             </div>
           ))}
         </div>
