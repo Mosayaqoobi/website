@@ -1,11 +1,11 @@
-/* Outer container (centers everything) */
+/*outer container(centers everything)*/
 .home-container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 4rem;
 }
 
-/* Top two-column layout */
+/*top two-column layout*/
 .top-section {
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
   margin-bottom: 3rem;
 }
 
-/* Head section (left column) */
+/*head section(left column)*/
 .head {
   flex: 0 0 45%;
   background-color: #242424;
@@ -27,7 +27,7 @@
   align-items: flex-start;
 }
 
-/* Image styling */
+/*image styling*/
 .photo img {
   width: 120px;
   height: 120px;
@@ -37,7 +37,7 @@
   margin-bottom: 1rem;
 }
 
-/* Right column layout */
+/*right column layout*/
 .right-column {
   flex: 0 0 45%;
   display: flex;
@@ -46,7 +46,7 @@
   gap: 2rem;
 }
 
-/* Box styles for About and Contact */
+/*box styles for about and contact*/
 .about,
 .contact {
   background-color: #242424;
@@ -60,7 +60,7 @@
     0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
-/* Hover effects for boxes */
+/*hover effects for boxes*/
 .about:hover,
 .contact:hover,
 .projects:hover {
@@ -70,7 +70,7 @@
     0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Header underline for About and Contact */
+/*header underline for about and contact*/
 .about h1,
 .contact h1 {
   margin-bottom: 1rem;
@@ -78,7 +78,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Full-width Projects section */
+/*full-width projects section*/
 .projects {
   background-color: #242424;
   padding: 3rem 2rem;
@@ -91,19 +91,19 @@
   text-align: center;
 }
 
-/* Projects header spacing */
+/*projects header spacing*/
 .projects h1 {
   margin-bottom: 2rem;
 }
 
-/* Project list container */
+/*project list container*/
 .project-list {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-/* Individual project cards */
+/*individual project cards*/
 .project-card {
   background-color: #242424;
   padding: 2rem;
@@ -133,9 +133,43 @@
   color: #ccc;
 }
 
-/* ========================= Modal Styles ========================= */
+/*contact boxes container*/
+.contact-boxes {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
 
-/* Modal overlay to darken the background with a fade-in effect */
+/*individual contact box style*/
+.contact-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background-color: #242424;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.05),
+              0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1),
+              0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.contact-box img {
+  max-width: 60%;
+  max-height: 60%;
+  object-fit: contain;
+}
+
+/*modal overlay to darken the background with a fade-in effect*/
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -147,10 +181,10 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease-out forwards;
+  animation: fadein 0.3s ease-out forwards;
 }
 
-/* Modal dialogue box with a scale-in effect */
+/*modal dialogue box with a scale-in effect*/
 .modal {
   background-color: #242424;
   padding: 2rem;
@@ -159,11 +193,11 @@
   max-width: 500px;
   width: 90%;
   text-align: center;
-  animation: scaleIn 0.3s ease-out forwards;
+  animation: scalein 0.3s ease-out forwards;
 }
 
-/* Keyframes for overlay fade in */
-@keyframes fadeIn {
+/*keyframes for overlay fade in*/
+@keyframes fadein {
   from {
     opacity: 0;
   }
@@ -172,8 +206,8 @@
   }
 }
 
-/* Keyframes for modal scale in */
-@keyframes scaleIn {
+/*the opening of the projects section*/
+@keyframes scalein {
   from {
     transform: scale(0.8);
     opacity: 0;
@@ -184,7 +218,7 @@
   }
 }
 
-/* Modal close button styling */
+/*the closing styling for closing the projects section*/
 .modal button {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
@@ -197,4 +231,45 @@
 
 .modal button:hover {
   background-color: #666;
+}
+
+/*copy dialogue for the email when pressed on the button*/
+.copy-toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #242424;
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.1),
+              0 8px 24px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  animation: toastfadein 0.3s forwards, toastfadeout 0.3s 1.7s forwards;
+  z-index: 1100;
+}
+
+/*fade in style for the email copied to clioboard*/
+@keyframes toastfadein {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/*fade out style for the email copied to clipboard*/
+@keyframes toastfadeout {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
 }
