@@ -1,136 +1,200 @@
 /* Outer container (centers everything) */
 .home-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Top two-column layout */
+.top-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Head section (left column) */
+.head {
+  flex: 0 0 45%;
+  background-color: #242424;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Image styling */
+.photo img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  margin-bottom: 1rem;
+}
+
+/* Right column layout */
+.right-column {
+  flex: 0 0 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+}
+
+/* Box styles for About and Contact */
+.about,
+.contact {
+  background-color: #242424;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.05),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effects for boxes */
+.about:hover,
+.contact:hover,
+.projects:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.7),
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header underline for About and Contact */
+.about h1,
+.contact h1 {
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Full-width Projects section */
+.projects {
+  background-color: #242424;
+  padding: 3rem 2rem;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.05),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+  margin: 3rem auto 0;
+  text-align: center;
+}
+
+/* Projects header spacing */
+.projects h1 {
+  margin-bottom: 2rem;
+}
+
+/* Project list container */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Individual project cards */
+.project-card {
+  background-color: #242424;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.05),
+    0 6px 16px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.1),
+    0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.project-card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* ========================= Modal Styles ========================= */
+
+/* Modal overlay to darken the background with a fade-in effect */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Modal dialogue box with a scale-in effect */
+.modal {
+  background-color: #242424;
+  padding: 2rem;
+  border-radius: 12px;
+  color: #ffffff;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+/* Keyframes for overlay fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  /* Top two-column layout */
-  .top-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 2rem;
-    margin-bottom: 3rem;
+  to {
+    opacity: 1;
   }
-  
-  /* Head section (left column) */
-  .head {
-    width: 45%;
-    background-color: #242424;
-    padding: 2rem;
-    border-radius: 12px;
-    color: #ffffff;
-    font-size: small;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+}
+
+/* Keyframes for modal scale in */
+@keyframes scaleIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
   }
-  
-  /* Image styling */
-  .photo img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-    margin-bottom: 1rem;
-    align-self: flex-start;
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
-  
-  /* Right column layout */
-  .right-column {
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 2rem;
-  }
-  
-  /* Box styles for About and Contact */
-  .about,
-  .contact {
-    background-color: #242424;
-    padding: 2rem;
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    color: #ffffff;
-    box-shadow:
-      0 0 12px rgba(255, 255, 255, 0.05),
-      0 8px 24px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Hover effects for boxes */
-  .about:hover,
-  .contact:hover,
-  .projects:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 0 12px rgba(255, 255, 255, 0.7),
-      0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Header underline for About and Contact */
-  .about h1,
-  .contact h1 {
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  
-  /* Divider (visual separator) */
-  .divider {
-    height: 1px;
-    background: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    margin: 0.5rem 0 1rem;
-  }
-  
-  /* Full-width Projects section */
-  .projects {
-    background-color: #242424;
-    margin-top: 3rem;
-    padding: 3rem 6rem;
-    border-radius: 12px;
-    color: #ffffff;
-    box-shadow:
-      0 0 12px rgba(255, 255, 255, 0.05),
-      0 8px 24px rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Project list container inside Projects */
-  .project-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  
-  /* Individual project cards */
-  .project-card {
-    background-color: #242424;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow:
-      0 0 12px rgba(255, 255, 255, 0.05),
-      0 6px 16px rgba(0, 0, 0, 0.3);
-    color: #ffffff;
-    transition: transform 0.2s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      0 0 12px rgba(255, 255, 255, 0.1),
-      0 8px 24px rgba(0, 0, 0, 0.5);
-  }
-  
-  .project-card h2 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-  }
-  
-  .project-card p {
-    font-size: 1rem;
-    color: #ccc;
-  }
+}
+
+/* Modal close button styling */
+.modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #444;
+  color: #fff;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background-color: #666;
+}
