@@ -6,6 +6,7 @@ import gmail from '../assets/gmail.png';
 import linkedin from '../assets/linked.png';
 import doc from '../assets/doc.png';
 import minion from '../assets/minion-events.png'
+import firebrick from '../assets/firebrick.png'
 
 //modal component that displays project details
 function Modal({ project, onClose }) {
@@ -27,7 +28,7 @@ function Modal({ project, onClose }) {
         <h3>link</h3>
         <p>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {project.link}
+            {"click here to view the project"}
           </a>
         </p>
         <h3>instructions</h3>
@@ -46,22 +47,23 @@ function Home() {
   const projects = [
     {
       id: 1,
-      title: "social networking",
+      title: "Social Networking",
       overview:
-        "social networking is an application built on the idea of socializing between others on the app. it allows you to post videos, share updates, and connect with friends.",
-      link: "https://example.com/social-networking",
+        "Firebrick social networking is an application built on the idea of socializing between others on the app. it allows you to post videos, share updates, and connect with friends.",
+      link: "https://github.com/uofa-cmput404/w25-project-mod-firebrick",
       instructions:
         "to use the app, create an account, then log in to post content and interact with friends.",
-      image: minion
+        image: firebrick
     },
     {
       id: 2,
-      title: "minion event app",
+      title: "Minion Event App",
       overview:
-        "minion event app is a mobile app that lets a user sign up for events within their area by scanning a qr code. it also allows organizers to create and manage events.",
-      link: "https://example.com/minion-event-app",
+        "Minion Event App is a mobile app that lets a user sign up for events within their area by scanning a qr code. it also allows organizers to create and manage events.",
+      link: "https://github.com/CMPUT301F24minion/minion-vector",
       instructions:
-        "download the app, scan the qr code provided at event venues, and follow on-screen instructions to sign up.",
+        "download the app, make an account of whether you are an organizer or a user, than start scanning qr codes, or make events for others to join.",
+        image: minion
     },
   ];
 
