@@ -12,8 +12,17 @@ function Modal({ project, onClose }) {
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal" onClick={e => e.stopPropagation()}>
         <h2>{project.title}</h2>
+
+        {/* Image */}
+        {project.image && (
+          <div className="modal-image">
+            <img src={project.image} alt={`${project.title} preview`} />
+          </div>
+        )}
+
         <h3>overview</h3>
         <p>{project.overview}</p>
+        
         <h3>link</h3>
         <p>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -90,14 +99,18 @@ function Home() {
             <img src={sponge} alt="mosa yaqoobi" />
           </div>
           <div className="text">
-            <h1>hey, i'm mosa yaqoobi, a computing science student</h1>
+            <h1>Hello, My name is Mosa Yaqoobi, a Computing Science student</h1>
             <h2></h2>
           </div>
         </section>
         <div className="right-column">
           <section className="about">
             <h1>about me</h1>
-            <p>talk about my hobbies and etc</p>
+            <p>Hello there, I am a 3rd year computing science student at the University of Alberta. I love to learn new things especially in my field,
+              and I also love to code new things, keeps me sane I guess. outside of education, I love to go to the gym. I not only find it relaxing and 
+              keeps my mind off school for a short period of time, but to also have something to work towards-trying to hit a specific weight ofcourse. other hobbies include playing badminton, going hiking or 
+              just climbing indoors. I’m always looking for ways to grow—both mentally and physically. Always down to learn, connect, and take on new adventures!
+            </p>
           </section>
 
           <section className="contact">

@@ -274,3 +274,11 @@
     transform: translateX(-50%) translateY(20px);
   }
 }
+
+const project = {
+  title: "My Cool Project",
+  overview: "This is what it does...",
+  link: "https://github.com/...",
+  instructions: "Clone, install, run!",
+  image: "https://yourdomain.com/image.jpg"
+}
