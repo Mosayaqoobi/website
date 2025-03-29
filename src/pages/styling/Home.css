@@ -275,10 +275,9 @@
   }
 }
 
-const project = {
-  title: "My Cool Project",
-  overview: "This is what it does...",
-  link: "https://github.com/...",
-  instructions: "Clone, install, run!",
-  image: "https://yourdomain.com/image.jpg"
+.modal-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
