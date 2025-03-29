@@ -5,6 +5,7 @@ import github from '../assets/github.svg';
 import gmail from '../assets/gmail.png';
 import linkedin from '../assets/linked.png';
 import doc from '../assets/doc.png';
+import minion from '../assets/minion-events.png'
 
 //modal component that displays project details
 function Modal({ project, onClose }) {
@@ -22,7 +23,7 @@ function Modal({ project, onClose }) {
 
         <h3>overview</h3>
         <p>{project.overview}</p>
-        
+
         <h3>link</h3>
         <p>
           <a href={project.link} target="_blank" rel="noopener noreferrer">
@@ -51,6 +52,7 @@ function Home() {
       link: "https://example.com/social-networking",
       instructions:
         "to use the app, create an account, then log in to post content and interact with friends.",
+      image: minion
     },
     {
       id: 2,

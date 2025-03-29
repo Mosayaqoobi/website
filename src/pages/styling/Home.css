@@ -195,6 +195,8 @@
   width: 90%;
   text-align: center;
   animation: scalein 0.3s ease-out forwards;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 /*keyframes for overlay fade in*/
