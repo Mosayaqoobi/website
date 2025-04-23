@@ -52,7 +52,7 @@ function Home() {
         "Firebrick social networking is an application built on the idea of socializing between others on the app. it allows you to post videos, share updates, and connect with friends.",
       link: "https://github.com/uofa-cmput404/w25-project-mod-firebrick",
       instructions:
-        "to use the app, create an account, then log in to post content and interact with friends.",
+        "to use the app, create an account, then log in to post content and make new friends!.",
         image: firebrick
     },
     {
@@ -109,7 +109,7 @@ function Home() {
         </section>
         <div className="right-column">
           <section className="about">
-            <h1>about me</h1>
+            <h1>About me</h1>
             <p>Hello there, I am a 3rd year computing science student at the University of Alberta. I love to learn new things especially in my field,
               and I also love to code new things, keeps me sane I guess. outside of education, I love to go to the gym. I not only find it relaxing and 
               keeps my mind off school for a short period of time, but to also have something to work towards-trying to hit a specific weight ofcourse. other hobbies include playing badminton, going hiking or 
@@ -118,7 +118,7 @@ function Home() {
           </section>
 
           <section className="contact">
-            <h1>contact me</h1>
+            <h1>Contact me</h1>
             <div className="contact-boxes">
               <a
                 href="https://github.com/Mosayaqoobi"
@@ -148,7 +148,7 @@ function Home() {
       </div>
 
       <section className="projects">
-        <h1>projects</h1>
+        <h1>Projects</h1>
         <div className="project-list">
           {projects.map((project) => (
             <div
