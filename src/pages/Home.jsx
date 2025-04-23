@@ -139,7 +139,7 @@ function Home() {
               <a onClick={copyEmail} className="contact-box">
                 <img src={gmail} alt="email" />
               </a>
-              <a href="/resume.pdf" download className="contact-box">
+              <a href={`${import.meta.env.BASE_URL}resume.pdf`} download className="contact-box">
                 <img src={doc} alt="resume" />
               </a>
             </div>
