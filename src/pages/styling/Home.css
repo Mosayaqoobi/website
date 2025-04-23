@@ -36,6 +36,7 @@
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
   margin-bottom: 1rem;
+  object-position: center 60%;
 }
 
 /*right column layout*/
@@ -50,6 +51,7 @@
 /*box styles for about and contact*/
 .about,
 .contact {
+  font-family: sans-serif;
   background-color: #242424;
   padding: 2rem;
   width: 100%;

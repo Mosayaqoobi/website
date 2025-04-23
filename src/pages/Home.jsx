@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './styling/home.css';
-import sponge from '../assets/sponge.webp';
+import pfp from '../assets/pfp.jpg';
 import github from '../assets/github.svg';
 import gmail from '../assets/gmail.png';
 import linkedin from '../assets/linked.png';
@@ -100,7 +100,7 @@ function Home() {
       <div className="top-section">
         <section className="head">
           <div className="photo">
-            <img src={sponge} alt="mosa yaqoobi" />
+            <img src={pfp} alt="mosa yaqoobi" />
           </div>
           <div className="text">
             <h1>Hello, My name is Mosa Yaqoobi, a Computing Science student</h1>
