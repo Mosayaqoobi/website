@@ -103,7 +103,7 @@ function Home() {
             <img src={pfp} alt="mosa yaqoobi" />
           </div>
           <div className="text">
-            <h1>Hello, My name is Mosa Yaqoobi, a Computing Science student</h1>
+            <h1>Hello, My name is Mosa Yaqoobi</h1>
             <h2></h2>
           </div>
         </section>
