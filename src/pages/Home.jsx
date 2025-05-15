@@ -24,13 +24,6 @@ function Modal({ project, onClose }) {
 
         <h3>overview</h3>
         <p>{project.overview}</p>
-
-        <h3>link</h3>
-        <p>
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
-            {"click here to view the project"}
-          </a>
-        </p>
         <h3>instructions</h3>
         <p>{project.instructions}</p>
         <button onClick={onClose}>close</button>
