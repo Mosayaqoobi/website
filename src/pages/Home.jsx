@@ -73,7 +73,7 @@ function Home() {
   //function to copy email to clipboard and show a custom toast
   const copyEmail = () => {
     navigator.clipboard
-      .writeText("your.email@example.com")
+      .writeText("mosayaqoobi@gmail.com")
       .then(() => {
         setShowCopyMessage(true);
         setTimeout(() => {
